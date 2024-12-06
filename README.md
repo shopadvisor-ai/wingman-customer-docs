@@ -12,6 +12,7 @@
 
 ```javascript
  <meta http-equiv="Content-Security-Policy" content="script-src 'self' *; connect-src *; media-src * blob:; img-src *;">
+
 	<link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 	<link rel="dns-prefetch" href="https://{{shop.domain}}" crossorigin>
