@@ -41,7 +41,7 @@ async function sendAttributionData(eventName, event) {
   const attribute_id = await browser.cookie.get('wingman_attribution_id')
   console.log("Id", attribute_id)
 
-  await fetch('https://apiv2-dev.getwingman.io/api/v1/sales/create', {
+  await fetch('https://apiv2-prod.getwingman.io/api/v1/sales/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
