@@ -41,13 +41,13 @@ async function sendAttributionData(eventName, event) {
   const attribute_id = await browser.cookie.get('wingman_attribution_id')
   console.log("Id", attribute_id)
 
-  await fetch('https://api.getwingman.io/api/v1/stores/track-affiliate-sale', {
+  await fetch('https://apiv2-dev.getwingman.io/api/v1/sales/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      wingman_attribution_id: attribute_id,
+      attribution_id: attribute_id,
       eventName: eventName,
       eventData: event
     }),
@@ -64,4 +64,5 @@ analytics.subscribe("checkout_completed", async (event) => {
   console.log("Got checkout completed 1")
   await sendAttributionData("checkout_completed", event);
 });
+
 ```
